@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Типография Виконт — Комплексная печать в Краснодаре</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #ffc107;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 20px;
+        }
+
+        .header-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .header-contacts {
+            text-align: right;
+        }
+
+        .header-phone {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--dark);
+            text-decoration: none;
+            display: block;
+        }
+
+        .header-manager {
+            color: #25d366;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        .promo-badge {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin: 60px 20px 40px;
+            position: relative;
+        }
+
+        .variants-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .variants-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 30px; }
+            .header-container { flex-direction: column; text-align: center; }
+            .header-contacts { text-align: center; margin-top: 10px; }
+        }
+
+        .card {
+            background: var(--light);
+            border-top: 5px solid var(--primary);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card.variant-2 {
+            border-top-color: var(--secondary);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .card-subtitle {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .problem-box {
+            background: #fff;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .solution-box {
+            background: #fff;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .box-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 5px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .cta-section {
+            background: var(--light);
+            padding: 60px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #25d366;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--dark);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        .footer-grid {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="https://flexo-vikont.ru" class="logo" target="_blank">ВИКОНТ<span>типография</span></a>
+            <div class="header-contacts">
+                <a href="tel:+79649277152" class="header-phone">+7 (964) 927-71-52</a>
+                <a href="https://wa.me" class="header-manager" target="_blank">🟢 Написать менеджеру в WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="promo-badge">Промокод на аудит макета: ВИКОНТ-ГИБРИД</div>
+            <h1>Как выбрать подрядчика по печати в Краснодаре и не переплачивать за лишний тираж?</h1>
+            <p>Гид по оптимизации полиграфических расходов от первых 100 наклеек до миллионов упаковок под конвейер.</p>
+        </div>
+    </section>
+
+    <h2 class="section-title">Выберите ваш формат бизнеса:</h2>
+
+    <section class="variants-container">
+        <!-- Вариант 1 -->
+        <div class="card">
+            <h3>🏭 Вариант 1: Крупный производитель</h3>
+            <div class="card-subtitle">Заводы, агрокомплексы, винодельни, крупные B2B-бренды</div>
+            
+            <div class="problem-box">
+                <div class="box-title">🛑 Ваши боли у узкоспециализированных гигантов:</div>
+                <ul>
+                    <li>Разрыв логистики: этикетка в одном месте, коробки во втором, каталоги в третьем.</li>
+                    <li>Жесткая бюрократия: малейшая правка в макет на ходу парализует процессы.</li>
+                </ul>
+            </div>
+
+            <div class="solution-box">
+                <div class="box-title">🌟 Решение в «Виконт»:</div>
+                <ul>
+                    <li><strong>Все в одном окне:</strong> Закрываем весь цикл от рулонной флексопечати до офсетных каталогов и коробок.</li>
+                    <li><strong>Гибкий VIP-сервис:</strong> Выделенный технолог на связи и индивидуальные условия по отсрочке платежей.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Вариант 2 -->
+        <div class="card variant-2">
+            <h3>🍯 Вариант 2: Небольшое ИП / Стартап</h3>
+            <div class="card-subtitle">Крафтовые производства, косметика, пекарни, селлеры маркетплейсов</div>
+            
+            <div class="problem-box">
+                <div class="box-title">🛑 Ваши барьеры в крупных типографиях:</div>
+                <ul>
+                    <li>Заградительный порог входа: отказ работать с тиражами менее 10 000–50 000 штук.</li>
+                    <li>Дорогие штампы: стоимость флексоформ убивает выгоду малого теста.</li>
+                </ul>
+            </div>
+
+            <div class="solution-box">
+                <div class="box-title">🌟 Решение в «Виконт»:</div>
+                <ul>
+                    <li><strong>Цифровой старт без переплат:</strong> Печатаем малые тиражи (от 100 шт.) с бесплатной плоттерной резкой любого силуэта.</li>
+                    <li><strong>Масштабируемость:</strong> Растем вместе с вами — от тестовой цифры до промышленных объемов флексопечати.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Получите бесплатный аудит макета и расчет стоимости за 15 минут!</h2>
+            <p>Проверим макет на технические ошибки и подберем выгодную технологию печати.</p>
+            <a href="https://wa.me?text=Здравствуйте!%20Хочу%20получить%20расчет%20по%20промокоду%20ВИКОНТ-ГИБРИД" class="btn" target="_blank">💬 Рассчитать тираж в WhatsApp</a>
+            <div>
+                <p>Или позвоните напрямую эксперту:<br><strong><a href="tel:+79649277152" style="color: var(--dark); font-size: 22px; text-decoration: none;">+7 (964) 927-71-52</a></strong></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>Типография «Виконт»</h4>
+                <p>г. Краснодар, ул. имени Дзержинского, 40/2</p>
+            </div>
+            <div>
+                <h4>Телефоны офиса</h4>
+                <p>8 (861) 215-11-10</p>
+
+8 (861) 215-11-09
+
+
+Официальный сайт
+www.flexo-vikont.ru
+
+
+© 2026 Типография Виконт. Все права защищены.
+
+
+***
+
+<FollowUp>
+Если нужно что-то скорректировать, дайте знать:
+* Хотите ли вы изменить **цветовую гамму** под ваш брендбук?
+* Нужно ли добавить **форму обратной связи** для сбора email/имен на сайте?
+* Требуется ли вставить список конкретных материалов (самоклейка, бумага, пленка)?
+</FollowUp>
